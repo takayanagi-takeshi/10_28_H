@@ -10,6 +10,11 @@
     <button type="button" @click="monthPlus">⇨</button>
   </div>
   <div class="calendar">
+    <div  class="c-week" v-for="week in weeks" :key="week">
+      {{week}}
+    </div>
+  </div>
+  <div class="calendar">
     <div  class="c-day" v-for="(day, index) in calendarData" :key="index">
       {{day}}
     </div>
@@ -45,6 +50,7 @@ export default {
   name: 'App',
   data() {
     return {
+      weeks: ["日", "月", "火", "水", "木", "金", "土"],
       todays: new Date(),
       now_year: new Date().getFullYear(),
       now_month: new Date().getMonth()+1
@@ -118,7 +124,7 @@ export default {
   flex-wrap: wrap;
   text-align: center;
   margin-left: auto;
-margin-right: auto;
+  margin-right: auto;
 }
 
 .c-day {
@@ -127,9 +133,17 @@ margin-right: auto;
   height: 60px;
 }
 
+.c-week {
+  font-size: 30px;
+  width: 13.8%;
+  border: solid 1px;
+  height: 60px;
+  padding-top: 10px;
+}
+
 .month {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 </style>
