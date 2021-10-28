@@ -3,14 +3,16 @@
   <!-- <div id="app" v-for="week of weeks" v-bind:key="week">
   {{week}}
   </div> -->
-  <div class="">
+  <div class="month">
     <button type="button" @click="monthMinus" class="border">⇦</button>
     {{now_year}}年
     {{now_month}}月
     <button type="button" @click="monthPlus">⇨</button>
   </div>
-  <div  class="c-day" v-for="(day, index) in calendarData" :key="index">
-    {{day}}
+  <div class="calendar">
+    <div  class="c-day" v-for="(day, index) in calendarData" :key="index">
+      {{day}}
+    </div>
   </div>
 </div>
 </template>
@@ -105,12 +107,12 @@ export default {
 </script>
 
 <style>
-/* * {
+* {
   margin: 0;
   padding: 0;
 }
 
-#app {
+.calendar {
   display: flex;
   width: 95%;
   flex-wrap: wrap;
@@ -122,11 +124,12 @@ margin-right: auto;
 .c-day {
   width: 13.8%;
   border: solid 1px;
-  height: 40px;
+  height: 60px;
 }
 
-.button {
-  display: flex;
+.month {
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
-} */
+}
 </style>
