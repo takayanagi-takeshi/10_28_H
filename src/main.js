@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import './assets/tailwind.css'
+// import calendarapp from './calendarapp'
 
 Vue.config.productionTip = false
 
