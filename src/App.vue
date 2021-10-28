@@ -3,13 +3,13 @@
   <!-- <div id="app" v-for="week of weeks" v-bind:key="week">
   {{week}}
   </div> -->
-  <div class="button">
-    <button type="button" @click="monthMinus">⇦</button>
+  <div class="">
+    <button type="button" @click="monthMinus" class="border">⇦</button>
     {{now_year}}年
     {{now_month}}月
     <button type="button" @click="monthPlus">⇨</button>
   </div>
-  <div class="c-day" v-for="(day, index) in calendarData" :key="index">
+  <div  class="c-day" v-for="(day, index) in calendarData" :key="index">
     {{day}}
   </div>
 </div>
@@ -50,10 +50,10 @@ export default {
   },
   computed: {
     getTsuki() {
-      return this.todays.getMonth() + 1
+      return this.now_month
     },
     getNen() {
-      return this.todays.getFullYear()
+      return this.now_year
     },
     getMonthFirstDayweek() {
       return new Date(this.getNen, this.getTsuki - 1, 1).getDay()
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style>
-* {
+/* * {
   margin: 0;
   padding: 0;
 }
@@ -125,7 +125,7 @@ margin-right: auto;
   height: 40px;
 }
 
-/* .button {
+.button {
   display: flex;
   text-align: center;
 } */
